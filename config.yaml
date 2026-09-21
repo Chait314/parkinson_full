@@ -1,0 +1,12 @@
+artifacts_root: 
+  artifact_root_dir: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  data_source: data/parkinsons.data
+  csv_file_store: artifacts/data
+
+data_preprocessing:
+  root_dir: artifacts/data_preprocessing
+  data_source: artifacts/data/parkinsons.csv
+  csv_file_store: artifacts/datapreprocessed
