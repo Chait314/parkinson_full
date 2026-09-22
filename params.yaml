@@ -1,1 +1,12 @@
-key: value
+model_params:
+  input_nodes: 22
+  hidden_layers: 4
+  output_nodes: 1
+  optimizer: "adam"
+  loss: "binary_crossentropy"
+
+model_train_params:
+  learning_rate: 0.05
+  epochs: 3000
+  batch_size: 32
+

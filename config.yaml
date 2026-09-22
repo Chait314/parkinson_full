@@ -10,3 +10,7 @@ data_preprocessing:
   root_dir: artifacts/data_preprocessing
   data_source: artifacts/data/parkinsons.csv
   csv_file_store: artifacts/datapreprocessed
+
+model:
+  data_source: artifacts/datapreprocessed
+  model_store: artifacts/model

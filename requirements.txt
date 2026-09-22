@@ -5,3 +5,5 @@ mlflow
 ipykernel
 imbalanced-learn
 scikit-learn
+keras
+tensorflow
