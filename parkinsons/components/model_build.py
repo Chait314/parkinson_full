@@ -34,9 +34,8 @@ class Model:
         );
 
         os.makedirs(self.model_store, exist_ok=True);
-        model_path = os.path.join(str(self.model_store), "model.pkl");
+        model_path = os.path.join(str(self.model_store), "model.keras");
 
-        with open(model_path, 'wb') as file:
-            pickle.dump(self.model, file);
+        self.model.save(model_path);
 
     

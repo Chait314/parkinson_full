@@ -14,3 +14,8 @@ data_preprocessing:
 model:
   data_source: artifacts/datapreprocessed
   model_store: artifacts/model
+
+model_training:
+  data_source: artifacts/datapreprocessed
+  model_initial_source: artifacts/model/model.keras
+  model_final_source: artifacts/model_final

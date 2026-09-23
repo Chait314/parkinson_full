@@ -7,6 +7,6 @@ model_params:
 
 model_train_params:
   learning_rate: 0.05
-  epochs: 3000
+  epochs: 1600
   batch_size: 32
 
