@@ -19,3 +19,8 @@ model_training:
   data_source: artifacts/datapreprocessed
   model_initial_source: artifacts/model/model.keras
   model_final_source: artifacts/model_final
+
+model_evaluation:
+  data_source: artifacts/datapreprocessed
+  model_source: artifacts/model_final/model.keras
+

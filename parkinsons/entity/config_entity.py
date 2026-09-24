@@ -38,3 +38,9 @@ class ModelTrainingParams:
     learning_rate: float;
     epochs: int;
     batch_size: int;
+
+@dataclass
+class ModelEvalConfig:
+    data_source: Path;
+    model_source: Path;
+    mlflow_uri: str;
