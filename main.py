@@ -2,12 +2,18 @@ from parkinsons.pipeline.data_ingestion_pipeline import DataIngestionPipeline;
 from parkinsons.pipeline.data_preprocessing import DataPreprocessingPipeline;
 from parkinsons.pipeline.model_build_pipeline import ModelBuildPipeline;
 from parkinsons.pipeline.model_train_pipeline import ModelTrainingPipeline;
+from parkinsons.pipeline.model_eval_pipeline import ModelEvalPipeline;
 import logging;
 import sys;
 from exceptions.DataIngestionException import DataIngestionException
 from exceptions.DataPreprocessingException import DataPreprocessingException;
 from exceptions.ModelBuildException import ModelBuildException;
+from exceptions.ModelEvaluationException import ModelEvaluationException;
+import os;
 
+os.environ['MLFLOW_TRACKING_URI'] = 'https://dagshub.com/chaitkris04/parkinson_full.mlflow';
+os.environ['MLFLOW_TRACKING_USERNAME'] = 'chaitkris04';
+os.environ['MLFLOW_TRACKING_PASSWORD'] = '1349155709b1474f6879559e286aaa2aff2cddf3';
 
 def Data_ingest():
     try:
@@ -39,11 +45,19 @@ def Model_train():
     except Exception as e:
         raise ModelBuildException(e, sys);
 
+def Model_eval():
+    try:
+        model_eval_pipeline = ModelEvalPipeline();
+        model_eval_pipeline.evaluate_pipeline();
+    except Exception as e:
+        raise ModelEvaluationException(e, sys);
+
 if __name__ == "__main__":
     try:
         Data_ingest();
         Data_preprocess();
         Model_Build();
         Model_train();
+        Model_eval();
     except Exception as e:
         logging.error(e);
